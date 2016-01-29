@@ -1,0 +1,6 @@
+{"cis": {"core.Directory" :["Applications/<project","Applications/<project>/<sub_project>","Environments/<project>/<sub_project>",
+"Environments/<project>/<sub_project>/dictionaries",
+"Infrastructure/<project>" ]},
+"roles": {"<project>_test_role1" : {"Applications/<project>/<sub_project>" : ["controltask#execute"],
+"Environments/<project>/<sub_project>": ["repo#edit"]},
+"<project>_test_role2" : {"global": ["discovery"]}}}

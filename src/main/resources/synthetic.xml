@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <type type="lm.xldSecurityProfile" description="create and secure initial xl-deploy setup for a project/portfolio" virtual="true" extends="xlrelease.PythonScript">
+        <property name="iconLocation" default="lm/SecurityEmblem.png" hidden="true" />
+        <property name="taskColor" hidden="true" default="#000000" />
+        <property name="XlDeployServer" category="input" label="XL-Deploy server to use" referenced-type="xldeploy.Server" kind="ci" />
+    </type>
+    <!-- configuration objects -->
+    <type type="lm.xldSecurityProfileTemplate" description="Template to use when creating a new xld directory structure for project" extends="xlrelease.Configuration">
+        <property name="templateJson" label="template in json format" default="{}" kind="string" size="large"/>
+        <property name="templateVariables" label="variables used in the templates comma seperated" kind="string" />
+    </type>
+    <type type="lm.createProjectSecurityStructure" description="create a directory and security structure in xldeploy for a new project" extends="lm.xldSecurityProfile" >
+        <property name="template" category="input" label="xld project template to use" referenced-type="lm.xldSecurityProfileTemplate" kind="ci" />
+        <property name="inputData" category="input" label="data to use when creating the structure" hidden="false" kind="string" required="true"/>
+    </type>
+</synthetic>
